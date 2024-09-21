@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from "./Profile.module.css";
-console.log(styles);
+
+
 
 const Profile = ({ username, avatar, tag, location, stats }) => {
   const { followers, views, likes } = stats;
@@ -8,26 +9,23 @@ const Profile = ({ username, avatar, tag, location, stats }) => {
   return (
     <div className={styles.card}>
       <div>
-        <img
-          src={avatar}
-          alt={username}
-        />
-        <p>{username}</p>
-        <p>@{tag}</p>
-        <p>{location}</p>
+        <img className={styles.avatar} src={avatar} alt={username} />
+        <p className={styles.name}>{username}</p>
+        <p className={styles.tag}>@{tag}</p>
+        <p className={styles.location}>{location}</p>
       </div>
-      <ul>
-        <li>
-          <span>Followers:</span>
-          <span>{followers}</span>
+      <ul className={styles.list}>
+        <li className={styles.item}>
+          <span className={styles.title}>Followers</span>
+          <span className={styles.data}>{followers}</span>
         </li>
-        <li>
-          <span>Views:</span>
-          <span>{views}</span>
+        <li className={styles.item}>
+          <span className={styles.title}>Views</span>
+          <span className={styles.data}>{views}</span>
         </li>
-        <li>
-          <span>Likes:</span>
-          <span>{likes}</span>
+        <li className={styles.item}>
+          <span className={styles.title}>Likes</span>
+          <span className={styles.data}>{likes}</span>
         </li>
       </ul>
     </div>
