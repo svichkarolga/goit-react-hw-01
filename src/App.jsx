@@ -4,27 +4,24 @@ import viteLogo from '/vite.svg';
 import '/src/App.css';
 import Profile from "./components/Profile/Profile";
 import FriendList from "./components/FriendList/FriendList";
+import Transactionhistory from "./components/Transactionhistory/Transactionhistory";
 import userData from "./userData.json";
-import friends from "./friends.json"
+import friends from "./friends.json";
+import transactions from "./transactions.json"
 
 
 function App() {
   return (
     <>
-      
       <div>
       <h2>Завдання 1</h2>
-      {userData.map((user) => {
-        return (
           <Profile
-            key={user.tag}
-            username={user.username}
-            tag={user.tag}
-            location={user.location}
-            avatar={user.avatar}
-            stats={user.stats} />
-        );
-      })}
+            key={userData.tag}
+            username={userData.username}
+            tag={userData.tag}
+            location={userData.location}
+            avatar={userData.avatar}
+            stats={userData.stats} />
       </div>
 
       <div>
@@ -32,6 +29,12 @@ function App() {
         <FriendList friends={friends} />
       </div>
 
+      <div>
+        <h2>Завдання 3</h2>
+          <>
+            <Transactionhistory transactions={transactions} />
+          </>
+      </div>
     </>
     )
 }
